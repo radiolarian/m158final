@@ -120,7 +120,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 718.0, 449.0, 56.0, 22.0 ],
+					"patching_rect" : [ 702.0, 416.166687, 56.0, 22.0 ],
 					"sig" : 0.0,
 					"style" : ""
 				}
@@ -298,7 +298,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
-					"patching_rect" : [ 644.333313, 115.000031, 240.0, 127.0 ],
+					"patching_rect" : [ 596.333313, 117.666656, 240.0, 127.0 ],
 					"text" : "/sel = if (\n   /numcolors < 50,\n      if ( /numcolors < 10,\n          /sel = 0,\n          /sel = 1),\n      if ( /numcolors < 200,\n          /sel = 2,\n\t\t          /sel = 3)\n)",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
@@ -329,23 +329,6 @@
 					"presentation_rect" : [ 722.0, 551.166626, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "startwindow"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-53",
-					"maxclass" : "number~",
-					"mode" : 1,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "float" ],
-					"patching_rect" : [ 644.333313, 364.500031, 56.0, 22.0 ],
-					"sig" : 0.0,
-					"style" : ""
 				}
 
 			}
@@ -2201,7 +2184,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "FullPacket" ],
-					"patching_rect" : [ 342.5, 341.000031, 117.0, 46.0 ],
+					"patching_rect" : [ 38.5, 337.000031, 117.0, 46.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -2234,17 +2217,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "scope~",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 114.0, 327.666687, 130.0, 130.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"format" : 6,
 					"id" : "obj-7",
 					"maxclass" : "flonum",
@@ -2264,7 +2236,7 @@
 					"numinlets" : 9,
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "signal", "signal", "FullPacket" ],
-					"patching_rect" : [ 450.0, 416.166687, 103.0, 22.0 ],
+					"patching_rect" : [ 161.5, 395.500031, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "o.granubuf~"
 				}
@@ -2304,7 +2276,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 334.5, 262.000031, 60.0, 22.0 ],
+					"patching_rect" : [ 156.5, 304.000031, 60.0, 22.0 ],
 					"style" : "",
 					"text" : "loadbang"
 				}
@@ -2320,7 +2292,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 342.5, 290.500031, 245.333328, 44.0 ],
+					"patching_rect" : [ 161.5, 337.000031, 245.333328, 44.0 ],
 					"saved_bundle_data" : [ 35, 98, 117, 110, 100, 108, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 52, 47, 102, 105, 108, 101, 47, 110, 97, 109, 101, 0, 0, 44, 115, 0, 0, 126, 47, 68, 101, 115, 107, 116, 111, 112, 47, 109, 49, 53, 56, 102, 105, 110, 97, 108, 47, 115, 97, 109, 112, 108, 101, 45, 116, 117, 110, 101, 115, 47, 0, 0, 0, 0, 0, 0, 24, 47, 102, 105, 108, 101, 47, 116, 121, 112, 101, 0, 0, 44, 115, 0, 0, 102, 111, 108, 100, 0, 0, 0, 0 ],
 					"saved_bundle_length" : 100,
 					"text" : "/file/name : \"~/Desktop/m158final/sample-tunes/\",\n/file/type : \"fold\"",
@@ -2553,28 +2525,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-45", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-41", 8 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-53", 0 ]
 				}
 
 			}
@@ -2674,6 +2628,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-71", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-41", 8 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-72", 0 ]
 				}
 
 			}
