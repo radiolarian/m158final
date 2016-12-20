@@ -22,6 +22,7 @@
  */
 
  // Tutorial script by Tom Krcha (Twitter: @tomkrcha)
+ // Modified for M158 by Jingyi
 
 (function () {
     "use strict";
@@ -79,14 +80,37 @@
         setCurrentDocumentId(id);
     }
 
+    function sendPixmap(pixmap) {
+        var pixels = pixmap.pixels;
+        var len = pixels.length,
+            channels = pixmap.channelCount;
+        var all_colors = {}
+        // ARGB 
+        // rep color as 
+        for(var i=0;i<len;i+=channels){
+            var r = pixels[i+1],
+                g = pixels[i+2],
+                b = pixels[i+3];
+            var color = r.toString() + g.toString()+ b.toString();
+            if (!(color in all_colors))
+                all_colors[color] = 1;
+        }
+     
+        var clen = Object.keys(all_colors).length;
+        // console.log('all colors is ', all_colors);
+        // console.log("length of dict is ", clen);
+
+        var msg = new osc.Message('/numcolors', clen);
+        client.send(msg);
+        console.log("sent msg /numcolors ", clen);
+
+    }
+
     function handleImageChanged(document) {
-        console.log("!!!!!! Image change !!!!! layers " + stringify(document.layers));
+        // console.log("!!!!!! Image change !!!!! layers " + stringify(document.layers));
         _generator.getPixmap(document.id, document.layers[0].id, {}).then( 
         function(pixmap){
-            console.log("INSIDE GET PIXMAP, it is " + pixmap);
-            var msg = new osc.Message('/testaddress', 1, 20, 69);
-            client.send(msg);
-           // savePixmap(pixmap)
+           sendPixmap(pixmap);
         },
         function(err){
             console.error("err pixmap:",err);
