@@ -108,14 +108,15 @@
 
     function handleImageChanged(document) {
         // console.log("!!!!!! Image change !!!!! layers " + stringify(document.layers));
-        _generator.getPixmap(document.id, document.layers[0].id, {}).then( 
-        function(pixmap){
-           sendPixmap(pixmap);
-        },
-        function(err){
-            console.error("err pixmap:",err);
-        }).done();
-
+        if (!document.metaDataOnly  ) {
+            _generator.getPixmap(document.id, document.layers[0].id, {}).then( 
+            function(pixmap){
+               sendPixmap(pixmap);
+            },
+            function(err){
+                console.error("err pixmap:",err);
+            }).done();            
+        }  
         // console.log("Image " + document.id + " was changed:");//, stringify(document));
     }
 
